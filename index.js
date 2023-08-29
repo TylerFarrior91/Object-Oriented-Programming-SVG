@@ -28,7 +28,17 @@ const questions = [
 ]
 
 const init = () => {
-    
+    inquirer.prompt(questions).then((res) => {
+        let svgShape;
+        if(res.shape === "Circle") {
+            svgShape = new Circle()
+        } else if(res.shape === "Triangle") {
+            svgShape = new Triangle()
+        } else if (res.shape === "Square") {
+            svgShape = new Square()
+        }
+        console.log(svgShape)
+    })
 };
 
 init()
