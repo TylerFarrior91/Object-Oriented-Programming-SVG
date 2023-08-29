@@ -37,7 +37,12 @@ const init = () => {
         } else if (res.shape === "Square") {
             svgShape = new Square()
         }
-        console.log(svgShape)
+        svgShape.setShapeColor(res.shapeColor)
+        const svg = new SVG()
+        svg.setShape(svgShape)
+        svg.setText(res.text, res.textColor)
+        console.log(svg.render())
+
     })
 };
 
