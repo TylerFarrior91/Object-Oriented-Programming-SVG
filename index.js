@@ -41,7 +41,7 @@ const init = () => {
         const svg = new SVG()
         svg.setShape(svgShape)
         svg.setText(res.text, res.textColor)
-        console.log(svg.render())
+        writeFile("logo.svg", svg.render())
 
     })
 };
